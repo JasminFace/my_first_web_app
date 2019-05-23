@@ -32,7 +32,16 @@ def portfolio(request):
     response = render(request, 'gallery.html', context)
     return HttpResponse(response)
 
+def about_me(request):
+    context = {
+        'skills': ['Dependable', 'Problem solving', 'Persistent', 'Creative'],
+        'interests': ['Fitness', 'Eating', 'Gunpla', 'You ;)']
+    }
+    response = render(request, 'about_me.html', context)
+    return HttpResponse(response)
+
 urlpatterns = [
 path('home/', home_page),
-path('portfolio/', portfolio)
+path('portfolio/', portfolio),
+path('about_me/', about_me)
 ]
