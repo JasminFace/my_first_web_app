@@ -40,8 +40,18 @@ def about_me(request):
     response = render(request, 'about_me.html', context)
     return HttpResponse(response)
 
+def favourites(request):
+    context = {
+        'fave_links': {'Bitmaker':'https://bitmaker.co/',
+        'Bitmaker Web Developement': 'https://bitmaker.co/courses/web-development',
+        'LMGTFY':'https://lmgtfy.com/'}
+    }
+    response = render(request, 'favourites.html', context)
+    return HttpResponse(response)
+
 urlpatterns = [
 path('home/', home_page),
 path('portfolio/', portfolio),
-path('about_me/', about_me)
+path('about_me/', about_me),
+path('favourites/', favourites)
 ]
