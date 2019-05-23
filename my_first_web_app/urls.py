@@ -17,7 +17,7 @@ from django.http import HttpResponse
 from django.urls import path
 
 def home_page(request):
-    return HttpResponse('Hi, this is the home page')
+    return HttpResponse()
 
 urlpatterns = [
 path('home/', home_page)
